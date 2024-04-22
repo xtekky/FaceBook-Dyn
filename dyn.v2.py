@@ -32,55 +32,60 @@ for match in contents:
 
 g = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_"
 
-# Initializing the module list representation and cache
-modules = module_list
-compressed_cache = None
+_1 = [0] * 999999
+_2 = None
 
-def to_string():
-    """Converts the module list to a binary string."""
-    return ''.join('1' if x else '0' for x in modules)
+for module_number in module_list:
+    _1[module_number] = 1
 
-def h(value):
-    """Converts a number to a binary string with a padding of zeros."""
-    binary = bin(value)[2:]  # Convert to binary and remove '0b'
-    return '0' * (len(binary) - 1) + binary
+def toString():
+    a = []
+    for b in range(len(_1)):
+        a.append(1 if _1[b] else 0)
+    return i("".join(map(str, a))) if len(a) else ""
 
-def i(binary_string):
-    """Encodes binary string to the custom base64-like encoding."""
-    # Append enough zeros to make the length a multiple of 6
-    padded_binary = (binary_string + "00000")[:len(binary_string) + (6 - len(binary_string) % 6)]
-    # Split into chunks of 6
-    chunks = [padded_binary[i:i+6] for i in range(0, len(padded_binary), 6)]
-    # Convert each chunk from binary to integer and then to the custom base64 character
-    return ''.join(g[int(chunk, 2)] for chunk in chunks if chunk)
+def h(a):
+    a = bin(a)[2:]
+    b = "0" * (len(a) - 1)
+    return b + a
 
-def to_compressed_string():
-    global compressed_cache
+def i(a):
+    a = (a + "00000")
+    a = [a[i:i+6] for i in range(0, len(a), 6)]
+    b = ""
+    for c in range(len(a)):
+        b += g[int(a[c], 2)]
+    return b
 
-    if not modules:
+def toCompressedString():
+    global _2
+    
+    if len(_1) == 0:
         return ""
-    if compressed_cache is not None:
-        return compressed_cache
+    if _2 is not None:
+        return _2
 
-    result = []
-    current_value = modules[0] if len(modules) > 0 else 0
-    count = 1
-    binary_prefix = bin(current_value)[2:]
+    a = []
+    b = 1
+    c = _1[0] if _1[0] else 0
+    d = bin(c)[2:]
 
-    for value in modules[1:]:
-        if value == current_value:
-            count += 1
+    for e in range(1, len(_1)):
+        f = _1[e] if _1[e] else 0
+        if f == c:
+            b += 1
         else:
-            result.append(h(count))
-            current_value = value
-            count = 1
+            a.append(h(b))
+            c = f
+            b = 1
 
-    # Append the last count
-    if count:
-        result.append(h(count))
+    if b:
+        a.append(h(b))
 
-    # Cache the result
-    compressed_cache = i(binary_prefix + ''.join(result))
-    return compressed_cache
+    _2 = i(d + "".join(a))
+    return _2
 
-print(to_compressed_string())
+# let a = "0001111000010011101110000101101000000101011010000101111000000101110010001011100000101110100101100100010000000011000101100001011110000001000011100000001000100110001110100000110110100000110000100000110001100000001001101010000010110110000000010010010110000011100010000100011000000000100101111110011010000001001110100000000110000101100000001100001110000000100010101000000110011110001100100000000101110000100001000110000001011111100000001001010110000001111100100000100101010000001010011000000110100110000000110000011000000010011100100000001010110010001111101110000000101000111000010011100000101010100011101000000010011100100000100000100000110001100000101110100000101011100000001000111011100000010111001000000010101111100001111110000000010010110110000010110110000011011010001010100011011000000001000001101000000010111101100000011011111000001101111000001100011000000001000101101000000110110010000001101001111000000101010110000000010010000110000111101000001011101000010111111000111110000100001"
+# print(i(a))
+
+print(toCompressedString(), "| python")
