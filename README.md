@@ -3,6 +3,8 @@ FaceBook's __dyn encrypts a list of javascript module numbers available in the p
 !! `dyn.fixed.py` works now (only tested for `__dyn`)
 I am working on reversing __rsc as it changed and I cannot reproduce the result when fetching modules from html.
 
+Dyn is located in [G3Nm7rYDpD0.js](https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/G3Nm7rYDpD0.js%3F_nc_x=Ij3Wp8lg5Kz) on [meta.ai](meta.ai)
+
 Better scripts and documentation to come soon, a function to extract module numbers is available in `dyn.py`
 the algorithm in .py is not working right, refer to `dyn.js`.
 
