@@ -12,11 +12,16 @@ It is called by `CSRBitmap`, referring to `__csr` but encrypts `__dyn` aswell
 <img width="695" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/911add94-08c9-4c3c-9bf4-d0955993eee0">
 
 here `"BootloaderEndpointConfig"` number 5094 is added/set.
+callstack: 
+
+<img width="280" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/9c78877a-fd34-420a-8ad7-34252bf0c484">
 
 
+
+Module numbers are set:  
 <img width="550" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/c3aea258-540e-4835-a56b-84ac71106cbd">
 
-Module numbers are set, then their value is equated to 1 in a list where the module number is the index. This list is then transformed to binary and encrypted/hashed.
+then their value is equated to 1 in a list where the module number is the index. This list is then transformed to binary and encrypted/hashed.
 
 On other sites look for `toCompressedString`.
 
