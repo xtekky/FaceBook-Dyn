@@ -4,11 +4,28 @@ FaceBook's __dyn encrypts a list of javascript module numbers available in the p
 I am working on reversing __rsc as it changed and I cannot reproduce the result when fetching modules from html.
 
 Dyn is located in [G3Nm7rYDpD0.js](https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/G3Nm7rYDpD0.js%3F_nc_x=Ij3Wp8lg5Kz) on [meta.ai](meta.ai)
+It is called by `CSRBitmap`, referring to `__csr` but encrypts `__dyn` aswell
+
+<img width="506" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/bb86887a-7d66-418d-a57b-2934c984f88c">
+
+<img width="610" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/5b7c2891-3e7f-44e4-ba5b-991e6afe507b">
+<img width="695" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/911add94-08c9-4c3c-9bf4-d0955993eee0">
+
+here `"BootloaderEndpointConfig"` number 5094 is added/set.
+
+
+<img width="550" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/c3aea258-540e-4835-a56b-84ac71106cbd">
+
+Module numbers are set, then their value is equated to 1 in a list where the module number is the index. This list is then transformed to binary and encrypted/hashed.
+
+On other sites look for `toCompressedString`.
+
+<img width="564" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/af848816-0688-4d46-ad9f-3765ee504575">
+
+A simple `console.log` statement here can console log the arrays used to encrypt.
 
 Better scripts and documentation to come soon, a function to extract module numbers is available in `dyn.py`
 the algorithm in .py is not working right, refer to `dyn.js`.
-
-
 
 <img width="1142" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/4e9475e6-6ba9-4a60-8b48-394d20ac6a92">
 
