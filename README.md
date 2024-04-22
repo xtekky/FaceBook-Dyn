@@ -3,9 +3,11 @@ FaceBook's __dyn encrypt a list of javascript module numbers available in the pa
 Better scripts and documentation to come soon, a function to extract module numbers is available in `dyn.py`
 the algorithm in .py is not working right, refer to `dyn.js`.
 
-dyn.py (for __dyn)
+
 
 <img width="1142" alt="image" src="https://github.com/xtekky/FaceBook-Dyn/assets/98614666/4e9475e6-6ba9-4a60-8b48-394d20ac6a92">
+
+dyn.py (for __dyn)
 
 ```
 7xeUmwlEnwn8K2Wmh0cm5U4e0yoW3q32360CEbo19oe8hw2nVE4W0om0MU2awpUO0n24o5-0Bo7O2l0Fwqo31w9O0H8-U2zxe2Gew9O22362W2K0zK1swa-7U1bobodEGdw46wbS1LwTwNw4mwr86Dwlo18ouwKxvzUgw000C7yu
