@@ -1,5 +1,19 @@
 FaceBook's __dyn encrypts a list of javascript module numbers available in the page html, there is also the __rsc parameter which works with the same logic.
 
+The module numbers used in the BitMap and CSRBitMap encryption come from the require/define module system used by Facebook's JavaScript codebase.
+
+Some key points:
+
+1. Each JavaScript module is assigned a unique module ID number when it is defined using the define() function. This module ID acts as a reference to that specific module.
+
+2. The BitMap class is used to efficiently store and represent a set of module IDs. It uses a binary string where each bit represents whether a particular module ID is present (1) or not (0). 
+
+3. The toCompressedString() method of BitMap converts this binary representation into a compact string using a base-64 like encoding scheme (using the characters in the variable g). This allows the set of module IDs to be transmitted efficiently.
+
+4. The CSRBitMap likely stands for "Client-Server Reconciliation BitMap". It seems to be used to keep track of which modules are present on the client vs server.
+
+5. When a script is loaded, the BitMap of its required module IDs is compared against the CSRBitMap to determine which additional modules need to be fetched from the server.
+
 !! `dyn.fixed.py` works now (only tested for `__dyn`)
 I am working on reversing __rsc as it changed and I cannot reproduce the result when fetching modules from html.
 
