@@ -1,5 +1,7 @@
 FaceBook's __dyn encrypt a list of javascript module numbers available in the page html, there is also the __rsc parameter which works with the same logic.
 
+!! `dyn.fixed.py` works now (only tested for `__dyn`)
+
 Better scripts and documentation to come soon, a function to extract module numbers is available in `dyn.py`
 the algorithm in .py is not working right, refer to `dyn.js`.
 
