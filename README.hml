@@ -5,6 +5,8 @@ the algorithm in .py is not working right, refer to `dyn.js`.
 
 dyn.py (for __dyn)
 
+![image](https://imgur.com/a/TI0Ii7p)
+
 ```
 7xeUmwlEnwn8K2Wmh0cm5U4e0yoW3q32360CEbo19oe8hw2nVE4W0om0MU2awpUO0n24o5-0Bo7O2l0Fwqo31w9O0H8-U2zxe2Gew9O22362W2K0zK1swa-7U1bobodEGdw46wbS1LwTwNw4mwr86Dwlo18ouwKxvzUgw000C7yu
 ```
