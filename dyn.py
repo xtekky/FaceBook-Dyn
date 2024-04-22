@@ -8,26 +8,26 @@ contents = re.findall(pattern, html_content)
 module_list = []
 
 for match in contents:
-    # if 'rsrcMap' in match:
-    #     json_data = json.loads(match)
-    #     modules = json_data['require'][0][3][0]['rsrcMap']
-        
-    #     for key in modules.keys():
-    #         key = (modules[key]['p'])
-    #         key = int(key[1:])
-            
-    #         module_list.append(key)
-    
-    if 'ScheduledServerJS' in match:
+    if 'rsrcMap' in match:
         json_data = json.loads(match)
+        modules = json_data['require'][0][3][0]['rsrcMap']
         
-        bbox_list = json_data['require'][0][3]
-        for bbox in bbox_list:
-            if bbox['__bbox'].get("define"):
-                for module in bbox['__bbox']['define']:
-                    if module[3] != -1:
-                        print(module[3])
-                        module_list.append(module[3])
+        for key in modules.keys():
+            key = (modules[key]['p'])
+            key = int(key[1:])
+            
+            module_list.append(key)
+    
+    # if 'ScheduledServerJS' in match:
+    #     json_data = json.loads(match)
+        
+    #     bbox_list = json_data['require'][0][3]
+    #     for bbox in bbox_list:
+    #         if bbox['__bbox'].get("define"):
+    #             for module in bbox['__bbox']['define']:
+    #                 if module[3] != -1:
+    #                     print(module[3])
+    #                     module_list.append(module[3])
 
 
 g = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_"
