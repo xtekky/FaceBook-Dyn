@@ -1,4 +1,4 @@
-FaceBook's __dyn encrypt a list of javascript module numbers available in the page html, there is also the __rsc parameter which works with the same logic.
+FaceBook's __dyn encrypts a list of javascript module numbers available in the page html, there is also the __rsc parameter which works with the same logic.
 
 !! `dyn.fixed.py` works now (only tested for `__dyn`)
 I am working on reversing __rsc as it changed and I cannot reproduce the result when fetching modules from html.
